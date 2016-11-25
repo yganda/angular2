@@ -7,7 +7,7 @@ import * as __ from 'lodash';
 let api: WeatherAPI = new WeatherAPI();
 
 api.init()
-    .then(() => api.getWeather(`http://api.openweathermap.org/data/2.5/find?lat=` + api.getLat() +
+    .then(() => api.getWeather(`//api.openweathermap.org/data/2.5/find?lat=` + api.getLat() +
     `&lon=` + api.getLong() + `&cnt=` + api.getTowns() + `&APPID=` + api.getKey()))
     .then((res) => {
     __.each(res.list, town => {
