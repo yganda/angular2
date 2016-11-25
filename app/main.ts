@@ -4,13 +4,13 @@
 import {WeatherAPI} from './src/weather';
 import * as __ from 'lodash';
 
-let api = new WeatherAPI('http://api.openweathermap.org/data/2.5/find?lat=55.5&lon=37.5&cnt=10&APPID=fc67aa358fc646401276f858e94302a6');
+let api = new WeatherAPI();
 
+api.getCurPosition().then((pos: Coordinates): number => pos.longitude);
 
-console.log(api.getCurPosition());
-
-// weather.getWeather().then((res) => {
-//
+// api.getWeather(`http://api.openweathermap.org/data/2.5/find?lat=`+ api.getCurPosition().then((pos: Coordinates): number => pos.latitude) +
+//     `&lon=`+ api.getCurPosition().then((pos: Coordinates): number => pos.longitude) +`&cnt=50`)
+//     .then((res) => {
 //     __.each(res.list, city => {
 //         let towns: NodeListOf<HTMLBodyElement> = document.getElementsByTagName('body');
 //         let e: HTMLDivElement = document.createElement('div');

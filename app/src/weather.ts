@@ -1,13 +1,10 @@
 export class WeatherAPI {
 
-    private request: Request;
-
-    constructor(url: string) {
-        this.request = new Request(url);
+    constructor() {
     }
 
-    getWeather(): Promise<JSON> {
-        return fetch(this.request).then((response: Response): Promise<JSON> => response.json())
+    getWeather(url: string) {
+        return fetch(new Request(url)).then((response: Response) => response.json())
     }
 
     getCurPosition: () => Promise<Coordinates|PositionError> = (): Promise<Coordinates|PositionError> =>
