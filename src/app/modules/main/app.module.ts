@@ -8,7 +8,7 @@ import {AgmCoreModule} from 'angular2-google-maps/core';
 import {HttpModule} from '@angular/http';
 import {HeaderComponent} from '../header/components/header.component';
 import {FooterComponent} from '../footer/components/footer.component';
-import {MapComponent} from '../map/component/map.component';
+import {MapComponent} from '../map/components/map.component';
 import {CityComponent} from '../cities/components/city/city.component';
 import {CitiesComponent} from '../cities/components/cities.component';
 
