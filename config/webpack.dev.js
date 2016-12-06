@@ -4,6 +4,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CleanWebpackPlugin = require('clean-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var helpers = require('./helpers');
@@ -11,18 +12,18 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   entry:[
-    './app/main.ts',
-    './app/index.scss'
+    './src/index.ts',
+    './src/index.scss'
   ],
   output: {
-    path: './dist/app',
+    path: './dist/src',
     filename: '[name].js'
   },
   stats: {
     errorDetails: true
   },
   resolve: {
-    extensions: ['.ts', '.css', '.scss', '.html', '']
+    extensions: ['.ts', '.js', '.css', '.scss', '.html', '']
   },
   devtool: 'source-map',
   module: {
@@ -36,6 +37,13 @@ module.exports = {
       {
         test: /\.ts$/,
         loaders: ['awesome-typescript-loader']
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          compact: false
+        }
       },
       {
         test: /\.html$/,
@@ -55,15 +63,24 @@ module.exports = {
 
     new ExtractTextPlugin('styles.css'),
 
+    new CleanWebpackPlugin(['dist'], {
+      root: process.cwd()
+    }),
+
     new CopyWebpackPlugin([
       {
         from: './app.js',
         to: '../app.js'
+      },
+      {
+        context: './src/assets',
+        from: '**/*',
+        to: './assets'
       }
     ]),
 
     new HtmlWebpackPlugin({
-      template: 'app/index.html'
+      template: 'src/index.html'
     }),
 
     new webpack.optimize.UglifyJsPlugin({
