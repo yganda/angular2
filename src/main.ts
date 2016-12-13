@@ -8,7 +8,7 @@ import 'rxjs';
 import 'zone.js';
 import 'reflect-metadata';
 
-import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {AppModule} from './app/main/app.module';
+import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { AppModule } from './app/main/app.module';
 
 platformBrowserDynamic().bootstrapModule(AppModule);

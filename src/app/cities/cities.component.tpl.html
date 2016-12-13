@@ -1,5 +1,2 @@
 <div class="loading" [class.hidden]="!loading"><img src="../../assets/img/loading.gif"></div>
-<template ngFor="let city of cities">
-    {{city}}
-    <city [city]="city" ></city>
-</template>
+<city template="ngFor let city of cities" [city]="city" ></city>

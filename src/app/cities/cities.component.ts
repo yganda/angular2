@@ -1,14 +1,15 @@
 /**
  * Created by Andrei_Furs on 12/5/2016.
  */
-import {Component} from '@angular/core';
+import { Component, ViewEncapsulation, OnInit } from '@angular/core';
 
 @Component({
     selector: 'cities',
+    encapsulation: ViewEncapsulation.None,
     templateUrl: 'cities.component.tpl.html',
     styleUrls: ['cites.scss']
 })
-export class CitiesComponent {
+export class CitiesComponent implements OnInit {
 
     private longitude: number = 0;
     private latitude: number = 0;

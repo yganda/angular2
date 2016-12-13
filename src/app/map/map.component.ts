@@ -1,10 +1,11 @@
 /**
  * Created by Andrei_Furs on 12/5/2016.
  */
-import {Component} from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'map',
+    encapsulation: ViewEncapsulation.None,
     templateUrl: 'map.component.tpl.html',
     styleUrls: ['map.scss']
 })

@@ -5,7 +5,6 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var helpers = require('./helpers');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -91,8 +90,6 @@ module.exports = {
   postcss: [autoprefixer({ browsers: ['last 2 versions'] })],
   plugins: [
 
-    // new ExtractTextPlugin('styles.css'),
-
     new CleanWebpackPlugin(['dist'], {
       root: process.cwd()
     }),
@@ -102,12 +99,6 @@ module.exports = {
         from: './app.js',
         to: '../app.js'
       }
-      // ,
-      // {
-      //   context: './src/assets',
-      //   from: '**/*',
-      //   to: './assets'
-      // }
     ]),
 
     new HtmlWebpackPlugin({
