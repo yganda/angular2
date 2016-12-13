@@ -1,0 +1,15 @@
+footer {
+  height: 5rem;
+  margin-top: 1rem;
+  background-color: #3c7cfc;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  .my-copyright{
+    line-height: 5rem;
+    margin-left: 3rem;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+}
