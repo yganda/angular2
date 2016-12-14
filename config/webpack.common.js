@@ -44,13 +44,6 @@ module.exports = {
         ]
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          compact: false
-        }
-      },
-      {
         test: /\.html$/,
         loader: 'html'
       },
